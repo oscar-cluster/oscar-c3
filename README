@@ -1,0 +1,5 @@
+C3 is a suite of cluster tools for cluster wide command execution.
+
+C3 project home: https://www.csm.ornl.gov/torc/C3/index.html
+This repository only hosts c3 opkg build instructions and files.
+
