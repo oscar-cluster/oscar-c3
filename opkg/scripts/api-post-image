@@ -4,21 +4,19 @@
 # any image as the one shipped in the RPM is not correct
 
 use strict;
-use Carp;
 
-my $image = shift;
 my $imagedir = shift;
 
 if ( -d "$imagedir" and "$imagedir" ne "/") {
     if ( -f "${imagedir}/etc/c3.conf") {
-        if ( unlink "$imagedir/etc/c3.conf" != 1 ) { # Problem (deleted file count != 1)
-            print "ERROR: Unable to remove $imagedir/etc/c3.conf\n";
+        if ( unlink "${imagedir}/etc/c3.conf" != 1 ) { # Problem (deleted file count != 1)
+            print "ERROR: Unable to remove ${imagedir}/etc/c3.conf\n";
 	    exit 1;
 	};
     }
     exit 0; # Success
 } else {
     print "ERROR: Invalid imagedir [$imagedir].\n";
-    print "       Can't try to remove c3.conf from image [$image].\n";
+    print "       Can't try to remove c3.conf from image.\n";
     exit 2;
 }
